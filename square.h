@@ -7,20 +7,19 @@
 #include <iostream>
 #include "location.h"
 
-class Square{
+class Square
+{
 public:
     Square();
     Square(std::string color_m, std::string location_m);
-    void get_color () const;
-    void get_location()const;
-    void set_color (std::string color_m);
+    void get_color() const;
+    void get_location() const;
+    void set_color(std::string color_m);
     void set_location(std::string location_m);
 
 private:
     std::string color;
     Location squareLocation;
-
 };
 
-#endif //CHESSBOARD_SQUARE_H
-
+#endif // CHESSBOARD_SQUARE_H

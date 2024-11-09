@@ -3,7 +3,8 @@
 #include "piece.h"
 #include "square.h"
 #include <cstdlib>
-int main() {
-   int number; //def
-   int number2  = 0; //Data con
+int main()
+{
+   char name_1 = 'L';
+   char name_2 = 'A';
 }

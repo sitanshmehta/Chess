@@ -10,19 +10,19 @@
 
 const int SIZE = 8;
 
-class Board{
+class Board
+{
 public:
     Board();
     Board(Square board_m[SIZE][SIZE]);
-    void get_board()const;
+    void get_board() const;
     void set_board(Square board_m[SIZE][SIZE]);
     void printBoard();
     void isLocationValid(std::string location);
     void findAvailableSquares();
 
-
 private:
     Square board[SIZE][SIZE];
 };
 
-#endif //CHESSBOARD_BOARD_H
+#endif // CHESSBOARD_BOARD_H
