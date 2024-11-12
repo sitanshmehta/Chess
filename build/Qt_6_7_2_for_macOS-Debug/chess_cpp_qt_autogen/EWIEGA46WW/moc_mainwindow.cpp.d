@@ -131,6 +131,7 @@
   /Users/sitanshmehta/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qglobalstatic.h \
   /Users/sitanshmehta/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qhash.h \
   /Users/sitanshmehta/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qhashfunctions.h \
+  /Users/sitanshmehta/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qiodevice.h \
   /Users/sitanshmehta/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qiodevicebase.h \
   /Users/sitanshmehta/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qiterable.h \
   /Users/sitanshmehta/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qiterator.h \
@@ -198,6 +199,7 @@
   /Users/sitanshmehta/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qtversionchecks.h \
   /Users/sitanshmehta/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qtypeinfo.h \
   /Users/sitanshmehta/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qtypes.h \
+  /Users/sitanshmehta/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qurl.h \
   /Users/sitanshmehta/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qutf8stringview.h \
   /Users/sitanshmehta/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qvariant.h \
   /Users/sitanshmehta/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qvarlengtharray.h \
@@ -217,18 +219,23 @@
   /Users/sitanshmehta/Qt/6.7.2/macos/lib/QtGui.framework/Versions/A/Headers/qkeysequence.h \
   /Users/sitanshmehta/Qt/6.7.2/macos/lib/QtGui.framework/Versions/A/Headers/qpaintdevice.h \
   /Users/sitanshmehta/Qt/6.7.2/macos/lib/QtGui.framework/Versions/A/Headers/qpalette.h \
+  /Users/sitanshmehta/Qt/6.7.2/macos/lib/QtGui.framework/Versions/A/Headers/qpicture.h \
   /Users/sitanshmehta/Qt/6.7.2/macos/lib/QtGui.framework/Versions/A/Headers/qpixelformat.h \
   /Users/sitanshmehta/Qt/6.7.2/macos/lib/QtGui.framework/Versions/A/Headers/qpixmap.h \
   /Users/sitanshmehta/Qt/6.7.2/macos/lib/QtGui.framework/Versions/A/Headers/qpolygon.h \
   /Users/sitanshmehta/Qt/6.7.2/macos/lib/QtGui.framework/Versions/A/Headers/qregion.h \
   /Users/sitanshmehta/Qt/6.7.2/macos/lib/QtGui.framework/Versions/A/Headers/qrgb.h \
   /Users/sitanshmehta/Qt/6.7.2/macos/lib/QtGui.framework/Versions/A/Headers/qrgba64.h \
+  /Users/sitanshmehta/Qt/6.7.2/macos/lib/QtGui.framework/Versions/A/Headers/qtextdocument.h \
   /Users/sitanshmehta/Qt/6.7.2/macos/lib/QtGui.framework/Versions/A/Headers/qtgui-config.h \
   /Users/sitanshmehta/Qt/6.7.2/macos/lib/QtGui.framework/Versions/A/Headers/qtguiexports.h \
   /Users/sitanshmehta/Qt/6.7.2/macos/lib/QtGui.framework/Versions/A/Headers/qtguiglobal.h \
   /Users/sitanshmehta/Qt/6.7.2/macos/lib/QtGui.framework/Versions/A/Headers/qtransform.h \
   /Users/sitanshmehta/Qt/6.7.2/macos/lib/QtGui.framework/Versions/A/Headers/qwindowdefs.h \
+  /Users/sitanshmehta/Qt/6.7.2/macos/lib/QtWidgets.framework/Versions/A/Headers/QLabel \
   /Users/sitanshmehta/Qt/6.7.2/macos/lib/QtWidgets.framework/Versions/A/Headers/QMainWindow \
+  /Users/sitanshmehta/Qt/6.7.2/macos/lib/QtWidgets.framework/Versions/A/Headers/qframe.h \
+  /Users/sitanshmehta/Qt/6.7.2/macos/lib/QtWidgets.framework/Versions/A/Headers/qlabel.h \
   /Users/sitanshmehta/Qt/6.7.2/macos/lib/QtWidgets.framework/Versions/A/Headers/qmainwindow.h \
   /Users/sitanshmehta/Qt/6.7.2/macos/lib/QtWidgets.framework/Versions/A/Headers/qsizepolicy.h \
   /Users/sitanshmehta/Qt/6.7.2/macos/lib/QtWidgets.framework/Versions/A/Headers/qtabwidget.h \
