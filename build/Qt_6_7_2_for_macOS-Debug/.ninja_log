@@ -1,0 +1,10 @@
+# ninja log v6
+2	38	1731369433171745787	/Users/sitanshmehta/chess_cpp_qt/build/Qt_6_7_2_for_macOS-Debug/CMakeFiles/cmake.verify_globs	60efc841623775c7
+39	252	1731369433411058632	chess_cpp_qt_autogen/timestamp	e8da48a6af3e91cf
+39	252	1731369433411058632	chess_cpp_qt_autogen/mocs_compilation.cpp	e8da48a6af3e91cf
+39	252	1731369433411058632	/Users/sitanshmehta/chess_cpp_qt/build/Qt_6_7_2_for_macOS-Debug/chess_cpp_qt_autogen/timestamp	e8da48a6af3e91cf
+39	252	1731369433411058632	/Users/sitanshmehta/chess_cpp_qt/build/Qt_6_7_2_for_macOS-Debug/chess_cpp_qt_autogen/mocs_compilation.cpp	e8da48a6af3e91cf
+254	1412	1731369433423221116	CMakeFiles/chess_cpp_qt.dir/chess_cpp_qt_autogen/mocs_compilation.cpp.o	6fbc341db3c80ef9
+254	1419	1731369433423480239	CMakeFiles/chess_cpp_qt.dir/main.cpp.o	c77ce6fdeb9b4a3e
+254	1419	1731369433423641238	CMakeFiles/chess_cpp_qt.dir/mainwindow.cpp.o	b120519f60986e88
+1419	1563	1731369434588626178	chess_cpp_qt.app/Contents/MacOS/chess_cpp_qt	19d33c8637dcfa33
