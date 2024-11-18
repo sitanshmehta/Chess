@@ -2,26 +2,36 @@
 #define PIECE_H
 
 #include <QWidget>
+#include <QPixmap>
+#include <vector>
 
-class Piece : public QWidget
+class Square;
+class Board;
+
+
+class Piece
 {
-    Q_OBJECT
 public:
-    Piece(QWidget *parent = nullptr);
-    ~Piece();
-
-    //use pure virtual functions for methods implemented by inherited classes
-    void setPiecePixmap();
-    void getPiecePixmap();
-    void whereIsPiece(Piece* piece);
-
-    enum TYPE {
+    enum Color {
         BLACK = 0,
         WHITE = 1
     };
 
-private:
-    QPixmap icon;
+    Piece(Color color);
+    virtual ~Piece();
+
+    Color getColor() const;
+    void setCurrSquare(Square* square);
+    Square* getCurrSquare() const;
+
+    //use pure virtual functions for methods implemented by inherited classes
+    virtual QPixmap getPixmap() const = 0;
+    virtual std::vector<Square*> getValidMoves(const Board& board) const = 0;
+    //virtual std::vector<Piece>
+
+protected:
+    Square* currSquare;
+    Color color;
 };
 
 #endif // PIECE_H

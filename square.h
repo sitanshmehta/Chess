@@ -5,11 +5,11 @@
 #include <QWidget>
 #include "piece.h"
 
+class Piece;
 
 //Each square will handle mouse events and display graphical content, therefore it inherits QWidget
 class Square : public QWidget
 {
-    friend class Piece; //this allows a piece to access x and y so that we know where the piece is
     //For signals and slots in the square class
     Q_OBJECT
 
