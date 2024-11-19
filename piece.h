@@ -27,7 +27,8 @@ public:
     //use pure virtual functions for methods implemented by inherited classes
     virtual QPixmap getPixmap() const = 0;
     virtual std::vector<Square*> getValidMoves(const Board& board) const = 0;
-    //virtual std::vector<Piece>
+    virtual bool moveToSquare(Piece *piece, Square* square);
+    //virtual std::vector<Piece*> piecesCaptured();
 
 protected:
     Square* currSquare;
