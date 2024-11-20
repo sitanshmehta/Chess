@@ -7,7 +7,7 @@
 				{
 					"build" : ".",
 					"hasInstallRule" : true,
-					"jsonFile" : "directory-.-Debug-bbf7dbe1865df68a9db8.json",
+					"jsonFile" : "directory-.-Debug-a4ffeaf6963cc72c68e4.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.16"
@@ -44,7 +44,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "chess_cpp_qt::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-chess_cpp_qt-Debug-c208eb6a27b2ceb75636.json",
+					"jsonFile" : "target-chess_cpp_qt-Debug-e7120dc6d80b353d11e7.json",
 					"name" : "chess_cpp_qt",
 					"projectIndex" : 0
 				},

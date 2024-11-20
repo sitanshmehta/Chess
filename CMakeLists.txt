@@ -26,6 +26,11 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(chess_cpp_qt
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
+        board.h board.cpp
+        square.h square.cpp
+        piece.h piece.cpp
+        rook.h rook.cpp
+        resources.qrc
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET chess_cpp_qt APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR

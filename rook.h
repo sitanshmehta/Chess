@@ -2,23 +2,24 @@
 #define ROOK_H
 
 #include <QPixmap>
-#include
+#include "piece.h"
+#include <vector>
+
+class Square;
 
 class Rook : public Piece
 {
-    Q_OBJECT
 public:
-    Rook(Color color, QPixmap icon, QWidget *parent = nullptr);
+    Rook(Color color);
 
     //overriden virtual functions
-    QPixmap getPixmap() const override;
-    std::vector<Square*> getValidMoves(const Board& board) const override;
-    bool moveToSquare(Piece *piece, Square* square) override;
+    //QPixmap getPixmap() const override;
+    //std::vector<Square*> getValidMoves(const Board& board) const override;
+    //bool moveToSquare(Piece *piece, Square *square) override;
 
 
 private:
     QPixmap icon;
-
 };
 
 #endif // ROOK_H

@@ -41,11 +41,19 @@ endif()
 # _directory_contents at /Users/sitanshmehta/Qt/6.7.2/macos/lib/cmake/Qt6LinguistTools/Qt6LinguistToolsMacros.cmake:55 (file)
 file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "/Users/sitanshmehta/chess_cpp_qt/*.cpp")
 set(OLD_GLOB
+  "/Users/sitanshmehta/chess_cpp_qt/board.cpp"
   "/Users/sitanshmehta/chess_cpp_qt/build/Qt_6_7_2_for_macOS-Debug/CMakeFiles/3.29.3/CompilerIdCXX/CMakeCXXCompilerId.cpp"
+  "/Users/sitanshmehta/chess_cpp_qt/build/Qt_6_7_2_for_macOS-Debug/chess_cpp_qt_autogen/EWIEGA46WW/moc_board.cpp"
   "/Users/sitanshmehta/chess_cpp_qt/build/Qt_6_7_2_for_macOS-Debug/chess_cpp_qt_autogen/EWIEGA46WW/moc_mainwindow.cpp"
+  "/Users/sitanshmehta/chess_cpp_qt/build/Qt_6_7_2_for_macOS-Debug/chess_cpp_qt_autogen/EWIEGA46WW/moc_rook.cpp"
+  "/Users/sitanshmehta/chess_cpp_qt/build/Qt_6_7_2_for_macOS-Debug/chess_cpp_qt_autogen/EWIEGA46WW/moc_square.cpp"
+  "/Users/sitanshmehta/chess_cpp_qt/build/Qt_6_7_2_for_macOS-Debug/chess_cpp_qt_autogen/EWIEGA46WW/qrc_resources.cpp"
   "/Users/sitanshmehta/chess_cpp_qt/build/Qt_6_7_2_for_macOS-Debug/chess_cpp_qt_autogen/mocs_compilation.cpp"
   "/Users/sitanshmehta/chess_cpp_qt/main.cpp"
   "/Users/sitanshmehta/chess_cpp_qt/mainwindow.cpp"
+  "/Users/sitanshmehta/chess_cpp_qt/piece.cpp"
+  "/Users/sitanshmehta/chess_cpp_qt/rook.cpp"
+  "/Users/sitanshmehta/chess_cpp_qt/square.cpp"
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
   message("-- GLOB mismatch!")
@@ -64,9 +72,13 @@ endif()
 # _directory_contents at /Users/sitanshmehta/Qt/6.7.2/macos/lib/cmake/Qt6LinguistTools/Qt6LinguistToolsMacros.cmake:55 (file)
 file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "/Users/sitanshmehta/chess_cpp_qt/*.h")
 set(OLD_GLOB
+  "/Users/sitanshmehta/chess_cpp_qt/board.h"
   "/Users/sitanshmehta/chess_cpp_qt/build/Qt_6_7_2_for_macOS-Debug/chess_cpp_qt_autogen/include/ui_mainwindow.h"
   "/Users/sitanshmehta/chess_cpp_qt/build/Qt_6_7_2_for_macOS-Debug/chess_cpp_qt_autogen/moc_predefs.h"
   "/Users/sitanshmehta/chess_cpp_qt/mainwindow.h"
+  "/Users/sitanshmehta/chess_cpp_qt/piece.h"
+  "/Users/sitanshmehta/chess_cpp_qt/rook.h"
+  "/Users/sitanshmehta/chess_cpp_qt/square.h"
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
   message("-- GLOB mismatch!")
@@ -148,6 +160,7 @@ endif()
 # _directory_contents at /Users/sitanshmehta/Qt/6.7.2/macos/lib/cmake/Qt6LinguistTools/Qt6LinguistToolsMacros.cmake:55 (file)
 file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "/Users/sitanshmehta/chess_cpp_qt/*.qrc")
 set(OLD_GLOB
+  "/Users/sitanshmehta/chess_cpp_qt/resources.qrc"
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
   message("-- GLOB mismatch!")

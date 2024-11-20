@@ -86,6 +86,7 @@ chess_cpp_qt_autogen/timestamp: \
 	/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/stdio.h \
 	/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/syslimits.h \
 	/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/wait.h \
+	/Users/sitanshmehta/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/QObject \
 	/Users/sitanshmehta/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/q20functional.h \
 	/Users/sitanshmehta/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/q20memory.h \
 	/Users/sitanshmehta/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/q20type_traits.h \
@@ -205,6 +206,7 @@ chess_cpp_qt_autogen/timestamp: \
 	/Users/sitanshmehta/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qversiontagging.h \
 	/Users/sitanshmehta/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qxptype_traits.h \
 	/Users/sitanshmehta/Qt/6.7.2/macos/lib/QtCore.framework/Versions/A/Headers/qyieldcpu.h \
+	/Users/sitanshmehta/Qt/6.7.2/macos/lib/QtGui.framework/Versions/A/Headers/QPixmap \
 	/Users/sitanshmehta/Qt/6.7.2/macos/lib/QtGui.framework/Versions/A/Headers/qaction.h \
 	/Users/sitanshmehta/Qt/6.7.2/macos/lib/QtGui.framework/Versions/A/Headers/qbitmap.h \
 	/Users/sitanshmehta/Qt/6.7.2/macos/lib/QtGui.framework/Versions/A/Headers/qbrush.h \
@@ -231,10 +233,16 @@ chess_cpp_qt_autogen/timestamp: \
 	/Users/sitanshmehta/Qt/6.7.2/macos/lib/QtGui.framework/Versions/A/Headers/qtguiglobal.h \
 	/Users/sitanshmehta/Qt/6.7.2/macos/lib/QtGui.framework/Versions/A/Headers/qtransform.h \
 	/Users/sitanshmehta/Qt/6.7.2/macos/lib/QtGui.framework/Versions/A/Headers/qwindowdefs.h \
+	/Users/sitanshmehta/Qt/6.7.2/macos/lib/QtWidgets.framework/Versions/A/Headers/QGridLayout \
 	/Users/sitanshmehta/Qt/6.7.2/macos/lib/QtWidgets.framework/Versions/A/Headers/QLabel \
 	/Users/sitanshmehta/Qt/6.7.2/macos/lib/QtWidgets.framework/Versions/A/Headers/QMainWindow \
+	/Users/sitanshmehta/Qt/6.7.2/macos/lib/QtWidgets.framework/Versions/A/Headers/QWidget \
+	/Users/sitanshmehta/Qt/6.7.2/macos/lib/QtWidgets.framework/Versions/A/Headers/qboxlayout.h \
 	/Users/sitanshmehta/Qt/6.7.2/macos/lib/QtWidgets.framework/Versions/A/Headers/qframe.h \
+	/Users/sitanshmehta/Qt/6.7.2/macos/lib/QtWidgets.framework/Versions/A/Headers/qgridlayout.h \
 	/Users/sitanshmehta/Qt/6.7.2/macos/lib/QtWidgets.framework/Versions/A/Headers/qlabel.h \
+	/Users/sitanshmehta/Qt/6.7.2/macos/lib/QtWidgets.framework/Versions/A/Headers/qlayout.h \
+	/Users/sitanshmehta/Qt/6.7.2/macos/lib/QtWidgets.framework/Versions/A/Headers/qlayoutitem.h \
 	/Users/sitanshmehta/Qt/6.7.2/macos/lib/QtWidgets.framework/Versions/A/Headers/qmainwindow.h \
 	/Users/sitanshmehta/Qt/6.7.2/macos/lib/QtWidgets.framework/Versions/A/Headers/qsizepolicy.h \
 	/Users/sitanshmehta/Qt/6.7.2/macos/lib/QtWidgets.framework/Versions/A/Headers/qtabwidget.h \
@@ -451,6 +459,8 @@ chess_cpp_qt_autogen/timestamp: \
 	/Users/sitanshmehta/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.29/Modules/Platform/Darwin.cmake \
 	/Users/sitanshmehta/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.29/Modules/Platform/UnixPaths.cmake \
 	/Users/sitanshmehta/chess_cpp_qt/CMakeLists.txt \
+	/Users/sitanshmehta/chess_cpp_qt/board.cpp \
+	/Users/sitanshmehta/chess_cpp_qt/board.h \
 	/Users/sitanshmehta/chess_cpp_qt/build/Qt_6_7_2_for_macOS-Debug/.qtc/package-manager/auto-setup.cmake \
 	/Users/sitanshmehta/chess_cpp_qt/build/Qt_6_7_2_for_macOS-Debug/CMakeFiles/3.29.3/CMakeCXXCompiler.cmake \
 	/Users/sitanshmehta/chess_cpp_qt/build/Qt_6_7_2_for_macOS-Debug/CMakeFiles/3.29.3/CMakeSystem.cmake \
@@ -458,5 +468,12 @@ chess_cpp_qt_autogen/timestamp: \
 	/Users/sitanshmehta/chess_cpp_qt/main.cpp \
 	/Users/sitanshmehta/chess_cpp_qt/mainwindow.cpp \
 	/Users/sitanshmehta/chess_cpp_qt/mainwindow.h \
+	/Users/sitanshmehta/chess_cpp_qt/piece.cpp \
+	/Users/sitanshmehta/chess_cpp_qt/piece.h \
+	/Users/sitanshmehta/chess_cpp_qt/resources.qrc \
+	/Users/sitanshmehta/chess_cpp_qt/rook.cpp \
+	/Users/sitanshmehta/chess_cpp_qt/rook.h \
+	/Users/sitanshmehta/chess_cpp_qt/square.cpp \
+	/Users/sitanshmehta/chess_cpp_qt/square.h \
 	/Users/sitanshmehta/chess_cpp_qt/mainwindow.ui \
 	/Users/sitanshmehta/Qt/Tools/CMake/CMake.app/Contents/bin/cmake

@@ -1230,6 +1230,9 @@
 			"path" : "/Users/sitanshmehta/Qt/6.7.2/macos/lib/cmake/Qt6/macos/Info.plist.app.in"
 		},
 		{
+			"path" : "resources.qrc"
+		},
+		{
 			"isGenerated" : true,
 			"path" : "build/Qt_6_7_2_for_macOS-Debug/.qt/info_plist/chess_cpp_qt/Info.plist"
 		}

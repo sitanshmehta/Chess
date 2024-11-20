@@ -24,11 +24,9 @@ public:
     void setCurrSquare(Square* square);
     Square* getCurrSquare() const;
 
-    //use pure virtual functions for methods implemented by inherited classes
-    virtual QPixmap getPixmap() const = 0;
-    virtual std::vector<Square*> getValidMoves(const Board& board) const = 0;
-    virtual bool moveToSquare(Piece *piece, Square* square);
-    //virtual std::vector<Piece*> piecesCaptured();
+    //virtual QPixmap getPixmap() const = 0;
+    //virtual std::vector<Square*> getValidMoves(const Board& board) const = 0;
+    //virtual bool moveToSquare(Piece *piece, Square *square) = 0;
 
 protected:
     Square* currSquare;

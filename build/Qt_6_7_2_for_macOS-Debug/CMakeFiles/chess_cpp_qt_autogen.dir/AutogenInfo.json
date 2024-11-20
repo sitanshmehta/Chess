@@ -294,7 +294,8 @@
 		"/Users/sitanshmehta/Qt/6.7.2/macos/lib/cmake/Qt6LinguistTools/Qt6LinguistToolsMacros.cmake",
 		"/Users/sitanshmehta/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.29/Modules/CMakeParseArguments.cmake",
 		"/Users/sitanshmehta/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.29/Modules/GNUInstallDirs.cmake",
-		"/Users/sitanshmehta/Qt/6.7.2/macos/lib/cmake/Qt6/macos/Info.plist.app.in"
+		"/Users/sitanshmehta/Qt/6.7.2/macos/lib/cmake/Qt6/macos/Info.plist.app.in",
+		"/Users/sitanshmehta/chess_cpp_qt/resources.qrc"
 	],
 	"CMAKE_SOURCE_DIR" : "/Users/sitanshmehta/chess_cpp_qt",
 	"CROSS_CONFIG" : false,
@@ -303,9 +304,33 @@
 	"HEADERS" : 
 	[
 		[
+			"/Users/sitanshmehta/chess_cpp_qt/board.h",
+			"MU",
+			"EWIEGA46WW/moc_board.cpp",
+			null
+		],
+		[
 			"/Users/sitanshmehta/chess_cpp_qt/mainwindow.h",
 			"MU",
 			"EWIEGA46WW/moc_mainwindow.cpp",
+			null
+		],
+		[
+			"/Users/sitanshmehta/chess_cpp_qt/piece.h",
+			"MU",
+			"EWIEGA46WW/moc_piece.cpp",
+			null
+		],
+		[
+			"/Users/sitanshmehta/chess_cpp_qt/rook.h",
+			"MU",
+			"EWIEGA46WW/moc_rook.cpp",
+			null
+		],
+		[
+			"/Users/sitanshmehta/chess_cpp_qt/square.h",
+			"MU",
+			"EWIEGA46WW/moc_square.cpp",
 			null
 		]
 	],
@@ -366,8 +391,12 @@
 	"SETTINGS_FILE" : "/Users/sitanshmehta/chess_cpp_qt/build/Qt_6_7_2_for_macOS-Debug/CMakeFiles/chess_cpp_qt_autogen.dir/AutogenUsed.txt",
 	"SOURCES" : 
 	[
+		[ "/Users/sitanshmehta/chess_cpp_qt/board.cpp", "MU", null ],
 		[ "/Users/sitanshmehta/chess_cpp_qt/main.cpp", "MU", null ],
-		[ "/Users/sitanshmehta/chess_cpp_qt/mainwindow.cpp", "MU", null ]
+		[ "/Users/sitanshmehta/chess_cpp_qt/mainwindow.cpp", "MU", null ],
+		[ "/Users/sitanshmehta/chess_cpp_qt/piece.cpp", "MU", null ],
+		[ "/Users/sitanshmehta/chess_cpp_qt/rook.cpp", "MU", null ],
+		[ "/Users/sitanshmehta/chess_cpp_qt/square.cpp", "MU", null ]
 	],
 	"UIC_OPTIONS" : [],
 	"UIC_SEARCH_PATHS" : [],
