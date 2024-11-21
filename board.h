@@ -6,6 +6,7 @@
 #include "square.h"
 #include <QGridLayout>
 
+static const int BOARD_SIZE = 8;
 
 class Board : public QWidget
 {
@@ -20,8 +21,8 @@ protected:
     void paintEvent(QPaintEvent *event) override;
 
 private:
-    static const int SQUARES = 8;
-    Square* squares[SQUARES][SQUARES];
+    Square* squares[BOARD_SIZE][BOARD_SIZE];
+
 
     void setupBoard();
 };
