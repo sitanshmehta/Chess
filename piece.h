@@ -24,8 +24,8 @@ public:
     void setCurrSquare(Square* square);
     Square* getCurrSquare() const;
 
-    //virtual QPixmap getPixmap() const = 0;
-    //virtual std::vector<Square*> getValidMoves(const Board& board) const = 0;
+    virtual QPixmap getPixmap() const = 0;
+    virtual std::vector<Square*> getValidMoves(const Board& board) const = 0;
     //virtual bool moveToSquare(Piece *piece, Square *square) = 0;
 
 protected:
