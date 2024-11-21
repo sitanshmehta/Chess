@@ -27,11 +27,11 @@ void Square::setPiece(Piece *newPiece) {
 void Square::paintEvent(QPaintEvent *event) {
     QPainter painter(this);
 
-    QColor color = ((x+y) % 2 == 0) ? QColor(Qt::white) : QColor(Qt::black);
+    QColor color = ((x+y) % 2 == 0) ? QColor(Qt::white) : QColor(Qt::gray);
     painter.fillRect(rect(), color);
 
     if(piece) {
-        //QPixmap pixmap = piece->getPixmap();
-        //painter.drawPixmap(rect(), pixmap);
+        QPixmap pixmap = piece->getPixmap();
+        painter.drawPixmap(rect(), pixmap.scaled(size(), Qt::KeepAspectRatio, Qt::SmoothTransformation));
     }
 }
