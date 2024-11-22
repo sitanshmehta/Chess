@@ -76,6 +76,7 @@ void Board::setupBoard()
                 if(piece){
                     squares[row][col]->setPiece(piece);
                     piece->setCurrSquare(squares[row][col]);
+                    //std::vector<Square*> valid = piece->getValidMoves(this);
                 }
             }
 

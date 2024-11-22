@@ -24,11 +24,22 @@ void Square::setPiece(Piece *newPiece) {
     update();
 }
 
+//paintEvent can modify the appearance of chess pieces within each square
 void Square::paintEvent(QPaintEvent *event) {
     QPainter painter(this);
 
-    QColor color = ((x+y) % 2 == 0) ? QColor(Qt::white) : QColor(Qt::gray);
+    bool isWhiteSquare = ((x+y) % 2 == 0);
+    QColor color = isWhiteSquare ? QColor(Qt::white) : QColor(Qt::gray);
     painter.fillRect(rect(), color);
+
+    //Adding a border to squares
+    //QColor pieceBorderColor = isWhiteSquare ? QColor(Qt::white) : QColor (Qt::black);
+    //int borderWidth = 2;
+    //QPen pen(pieceBorderColor, borderWidth);
+    //painter.setPen(pen);
+    //painter.drawRect(rect().adjusted(0, 0, -borderWidth, -borderWidth));
+
+
 
     if(piece) {
         QPixmap pixmap = piece->getPixmap();

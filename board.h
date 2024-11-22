@@ -23,7 +23,6 @@ protected:
 private:
     Square* squares[BOARD_SIZE][BOARD_SIZE];
 
-
     void setupBoard();
 };
 
