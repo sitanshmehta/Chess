@@ -25,6 +25,8 @@ public:
     Square* getCurrSquare() const;
 
     virtual QPixmap getPixmap() const = 0;
+    //Passing 'Board' to 'getValidMoves' is necessary for the piece to calculate valid moves
+    //based on the current board state, including obstacles and other pieces.
     virtual std::vector<Square*> getValidMoves(const Board& board) const = 0;
     //virtual bool moveToSquare(Piece *piece, Square *square) = 0;
 
