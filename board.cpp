@@ -86,6 +86,10 @@ void Board::setupBoard()
     setLayout(grid);
 }
 
+Square* Board::getSquare(int row, int col) const {
+    return this->squares[row][col];
+}
+
 void Board::paintEvent(QPaintEvent *event)
 {
     QWidget::paintEvent(event);

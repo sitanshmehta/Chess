@@ -15,7 +15,7 @@ public:
     Board(QWidget *parent = nullptr);
     ~Board();
 
-    Square* getSquare(int row, int col);
+    Square* getSquare(int row, int col) const;
 
 protected:
     void paintEvent(QPaintEvent *event) override;
