@@ -1,5 +1,6 @@
 #include "rook.h"
 #include "piece.h"
+#include"board.h"
 #include "square.h"
 #include "iostream"
 
@@ -18,7 +19,7 @@ QPixmap Rook::getPixmap() const
     return icon;
 }
 
-std::vector<Square*> Rook::getValidMoves(const Board &board) const
+std::vector<Square*> Rook::getValidMoves(const Board& board) const
 {
     std::vector<Square*> validMoves;
 
@@ -26,12 +27,12 @@ std::vector<Square*> Rook::getValidMoves(const Board &board) const
     int x = currSquare->getX();
     int y = currSquare->getY();
 
-    for(int i = x; i < BOARD_SIZE; i++) {
-        Square* square = *board->getSquare(x, i);
+    for(int i = x; i < 8; i++) {
+        Square* square = board.getSquare(x, i);
         if(square->getPiece() != nullptr) {
             break;
         }
-        validMoves.insert(square);
+        validMoves.push_back(square);
     }
     return validMoves;
 }

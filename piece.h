@@ -5,8 +5,8 @@
 #include <QPixmap>
 #include <vector>
 
-class Square;
 class Board;
+class Square;
 
 
 class Piece
