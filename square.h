@@ -21,14 +21,19 @@ public:
     Piece* getPiece() const;
     void setPiece(Piece* newPiece);
 
+signals:
+    void squareClicked(int x, int y);
+
 //override default behavior of paintEvent function that paints widgets
 protected:
     void paintEvent(QPaintEvent *event) override;
+    void mousePressEvent(QMouseEvent *event) override;
 
 private:
     int x;
     int y;
     Piece *piece;
+    bool isHighLighted = false;
 };
 
 #endif // SQUARE_H

@@ -1,10 +1,12 @@
 #include "square.h"
 #include <QPainter>
+#include <QMouseEvent>
 
 Square::Square(int x, int y, QWidget *parent)
     : QWidget(parent), x(x), y(y), piece(nullptr)
 {
     setFixedSize(50, 50);
+    setMouseTracking(true);
 }
 
 int Square::getX() const {
@@ -30,6 +32,11 @@ void Square::paintEvent(QPaintEvent *event) {
 
     bool isWhiteSquare = ((x+y) % 2 == 0);
     QColor color = isWhiteSquare ? QColor(Qt::white) : QColor(Qt::gray);
+
+    if(isHighLighted){
+        color = QColor(Qt::yellow).lighter(150);
+    }
+
     painter.fillRect(rect(), color);
 
     //Adding a border to squares
@@ -44,5 +51,11 @@ void Square::paintEvent(QPaintEvent *event) {
     if(piece) {
         QPixmap pixmap = piece->getPixmap();
         painter.drawPixmap(rect(), pixmap.scaled(size(), Qt::KeepAspectRatio, Qt::SmoothTransformation));
+    }
+}
+
+void Square::mousePressEvent(QMouseEvent *event) {
+    if(event->button() == Qt::LeftButton) {
+        emit squareClicked(x, y);
     }
 }
