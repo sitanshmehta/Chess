@@ -19,7 +19,11 @@ public:
     int getX() const;
     int getY() const;
     Piece* getPiece() const;
+    bool getHighlighted() const;
+
     void setPiece(Piece* newPiece);
+    void setHighlighted(bool highlight);
+    static void highlightSetOfSquares(std::vector<Square*> squares);
 
 signals:
     void squareClicked(int x, int y);

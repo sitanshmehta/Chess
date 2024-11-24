@@ -9,25 +9,47 @@ Square::Square(int x, int y, QWidget *parent)
     setMouseTracking(true);
 }
 
-int Square::getX() const {
+int Square::getX() const
+{
     return x;
 }
 
-int Square::getY() const {
+int Square::getY() const
+{
     return y;
 }
 
-Piece* Square::getPiece() const {
+Piece* Square::getPiece() const
+{
     return piece;
 }
 
-void Square::setPiece(Piece *newPiece) {
+bool Square::getHighlighted() const
+{
+    return isHighLighted;
+}
+
+void Square::setPiece(Piece *newPiece)
+{
     piece = newPiece;
     update();
 }
 
+void Square::setHighlighted(bool highlight)
+{
+    isHighLighted = highlight;
+    update();
+}
+
+void Square::highlightSetOfSquares(std::vector<Square*> squares)
+{
+    std::for_each(squares.begin(), squares.end(), [](Square* x) { x->setHighlighted(true); });
+}
+
+
 //paintEvent can modify the appearance of chess pieces within each square
-void Square::paintEvent(QPaintEvent *event) {
+void Square::paintEvent(QPaintEvent *event)
+{
     QPainter painter(this);
 
     bool isWhiteSquare = ((x+y) % 2 == 0);
@@ -46,15 +68,14 @@ void Square::paintEvent(QPaintEvent *event) {
     //painter.setPen(pen);
     //painter.drawRect(rect().adjusted(0, 0, -borderWidth, -borderWidth));
 
-
-
     if(piece) {
         QPixmap pixmap = piece->getPixmap();
         painter.drawPixmap(rect(), pixmap.scaled(size(), Qt::KeepAspectRatio, Qt::SmoothTransformation));
     }
 }
 
-void Square::mousePressEvent(QMouseEvent *event) {
+void Square::mousePressEvent(QMouseEvent *event)
+{
     if(event->button() == Qt::LeftButton) {
         emit squareClicked(x, y);
     }
