@@ -22,8 +22,9 @@ protected:
 
 private:
     Square* squares[BOARD_SIZE][BOARD_SIZE];
-
+    Piece* selectedPiece = nullptr;
     void setupBoard();
+    void handleSelectedSquare(int x, int y);
 };
 
 #endif // BOARD_H

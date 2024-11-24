@@ -3,7 +3,18 @@
 #include "rook.h"
 #include <QGridLayout>
 #include "iostream"
+#include <QDebug>
 
+const std::string initialSetup[BOARD_SIZE][BOARD_SIZE] = {
+    { "bR", "bN", "bB", "bQ", "bK", "bB", "bN", "bR" },
+    { "bP", "bP", "bP", "bP", "bP", "bP", "bP", "bP" },
+    { "",   "",   "",   "",   "",   "",   "",   ""   },
+    { "",   "",   "",   "bR",   "",   "",   "",   ""   },
+    { "",   "",   "",   "",   "",   "",   "",   ""   },
+    { "",   "",   "",   "",   "",   "",   "",   ""   },
+    { "wP", "wP", "wP", "wP", "wP", "wP", "wP", "wP" },
+    { "wR", "wN", "wB", "wQ", "wK", "wB", "wN", "wR" }
+};
 
 Board::Board(QWidget *parent)
     : QWidget(parent)
@@ -20,16 +31,9 @@ Board::~Board()
     }
 }
 
-const std::string initialSetup[BOARD_SIZE][BOARD_SIZE] = {
-    { "bR", "bN", "bB", "bQ", "bK", "bB", "bN", "bR" },
-    { "bP", "bP", "bP", "bP", "bP", "bP", "bP", "bP" },
-    { "",   "",   "",   "",   "",   "",   "",   ""   },
-    { "",   "",   "",   "",   "",   "",   "",   ""   },
-    { "",   "",   "",   "",   "",   "",   "",   ""   },
-    { "",   "",   "",   "",   "",   "",   "",   ""   },
-    { "wP", "wP", "wP", "wP", "wP", "wP", "wP", "wP" },
-    { "wR", "wN", "wB", "wQ", "wK", "wB", "wN", "wR" }
-};
+Square* Board::getSquare(int row, int col) const {
+    return this->squares[row][col];
+}
 
 void Board::setupBoard()
 {
@@ -42,6 +46,10 @@ void Board::setupBoard()
             squares[row][col] = new Square(col, row, this);
             grid->addWidget(squares[row][col], row, col);
 
+
+            //connecting squares signal to board's slot
+            connect(squares[row][col], &Square::squareClicked, this, &Board::handleSelectedSquare);
+
             std::string pieceCode = initialSetup[row][col];
             //If it isnt an empty square
             if(!pieceCode.empty()){
@@ -51,26 +59,26 @@ void Board::setupBoard()
                 Piece* piece = nullptr;
 
                 switch (pieceType) {
-                case 'R':
-                    piece = new Rook(pieceColor);
-                    break;
-                case 'N':
-                    // piece = new Knight(pieceColor);
-                    break;
-                case 'B':
-                    // piece = new Bishop(pieceColor);
-                    break;
-                case 'Q':
-                    // piece = new Queen(pieceColor);
-                    break;
-                case 'K':
-                    // piece = new King(pieceColor);
-                    break;
-                case 'P':
-                    // piece = new Pawn(pieceColor);
-                    break;
-                default:
-                    break;
+                    case 'R':
+                        piece = new Rook(pieceColor);
+                        break;
+                    case 'N':
+                        // piece = new Knight(pieceColor);
+                        break;
+                    case 'B':
+                        // piece = new Bishop(pieceColor);
+                        break;
+                    case 'Q':
+                        // piece = new Queen(pieceColor);
+                        break;
+                    case 'K':
+                        // piece = new King(pieceColor);
+                        break;
+                    case 'P':
+                        // piece = new Pawn(pieceColor);
+                        break;
+                    default:
+                        break;
                 }
 
                 if(piece){
@@ -86,8 +94,29 @@ void Board::setupBoard()
     setLayout(grid);
 }
 
-Square* Board::getSquare(int row, int col) const {
-    return this->squares[row][col];
+
+void Board::handleSelectedSquare(int x, int y)
+{
+    //why does this work when we pass in y,x but not when we pass in x,y
+    Square* clickedSquare = getSquare(y, x);
+    Piece* pieceOnSquare = clickedSquare->getPiece();
+
+    bool isHighlighted = clickedSquare->getHighlighted();
+
+    if(!isHighlighted) {
+        clickedSquare->setHighlighted(true);
+    }
+    else {
+        clickedSquare->setHighlighted(false);
+    }
+
+    //qDebug() << "Piece";
+
+    if(pieceOnSquare != nullptr) {
+        std::vector<Square*> validMoves = pieceOnSquare->getValidMoves(this);
+        qDebug() << "SIZE: " << validMoves.size();
+        Square::highlightSetOfSquares(validMoves);
+    }
 }
 
 void Board::paintEvent(QPaintEvent *event)
