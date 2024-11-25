@@ -1,6 +1,7 @@
 #include "square.h"
 #include <QPainter>
 #include <QMouseEvent>
+#include <iostream>
 
 Square::Square(int x, int y, QWidget *parent)
     : QWidget(parent), x(x), y(y), piece(nullptr)
@@ -37,13 +38,50 @@ void Square::setPiece(Piece *newPiece)
 
 void Square::setHighlighted(bool highlight)
 {
-    isHighLighted = highlight;
+    this->isHighLighted = highlight;
     update();
 }
 
-void Square::highlightSetOfSquares(std::vector<Square*> squares)
+/*
+void Square::highlightSetOfSquares(const std::vector<Square*> &squares, bool highlight)
 {
-    std::for_each(squares.begin(), squares.end(), [](Square* x) { x->setHighlighted(true); });
+    qDebug() << "SIZE: " << squares.size();
+    qDebug()<< "Highlight: " << squares[0]->getHighlighted();
+
+    if (squares[0] != nullptr) {
+        qDebug() << "Here";
+        squares[0]->setHighlighted(highlight);
+    } else {
+        qDebug() << "squares[0] is a null pointer.";
+    }
+
+    //for (Square* square : squares) {
+     //   square->setHighlighted(highlight);
+    //}
+} */
+
+void Square::highlightSetOfSquares(const std::vector<Square*>& squares, bool highlight)
+{
+    qDebug() << "SIZE: " << squares.size();
+
+    if (!squares.empty() && squares[0] != nullptr) {
+        qDebug() << "Highlight: " << squares[0]->getHighlighted();
+        qDebug() << "Here";
+
+        // Ensure squares[0] is valid
+        squares[0]->setHighlighted(highlight);
+    } else {
+        qDebug() << "squares[0] is a null pointer or squares is empty.";
+    }
+
+    // Highlight all squares
+    for (Square* square : squares) {
+        if (square != nullptr) {
+            square->setHighlighted(highlight);
+        } else {
+            qDebug() << "Encountered a null pointer in squares vector.";
+        }
+    }
 }
 
 

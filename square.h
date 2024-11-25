@@ -23,7 +23,8 @@ public:
 
     void setPiece(Piece* newPiece);
     void setHighlighted(bool highlight);
-    static void highlightSetOfSquares(std::vector<Square*> squares);
+    //pbr to avoid copying, declared as static since it isnt instance specific
+    static void highlightSetOfSquares(const std::vector<Square*> &squares, bool highlight);
 
 signals:
     void squareClicked(int x, int y);

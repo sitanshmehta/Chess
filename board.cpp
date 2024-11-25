@@ -84,7 +84,6 @@ void Board::setupBoard()
                 if(piece){
                     squares[row][col]->setPiece(piece);
                     piece->setCurrSquare(squares[row][col]);
-                    //std::vector<Square*> valid = piece->getValidMoves(this);
                 }
             }
 
@@ -114,8 +113,12 @@ void Board::handleSelectedSquare(int x, int y)
 
     if(pieceOnSquare != nullptr) {
         std::vector<Square*> validMoves = pieceOnSquare->getValidMoves(this);
-        qDebug() << "SIZE: " << validMoves.size();
-        Square::highlightSetOfSquares(validMoves);
+        //qDebug() << "Here: ";
+        Square::highlightSetOfSquares(validMoves, true);
+        //for(Square* square : validMoves) {
+          //  square->setHighlighted(true);
+        //}
+        //validMoves[0]->setHighlighted(true);
     }
 }
 
