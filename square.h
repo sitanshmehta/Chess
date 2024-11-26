@@ -1,7 +1,6 @@
 #ifndef SQUARE_H
 #define SQUARE_H
 
-#include <QObject>
 #include <QWidget>
 #include "piece.h"
 
@@ -14,7 +13,8 @@ class Square : public QWidget
     Q_OBJECT
 
 public:
-    Square(int x, int y, QWidget *parent = nullptr);
+    Square(int x, int y, QWidget *parent);
+    ~Square();
 
     int getX() const;
     int getY() const;

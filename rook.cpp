@@ -19,44 +19,6 @@ QPixmap Rook::getPixmap() const
     return icon;
 }
 
-/*
-std::vector<Square*> Rook::getValidMoves(const Board& board) const
-{
-    std::vector<Square*> validMoves;
-
-    Square* currSquare = this->getCurrSquare();
-    Piece* currPiece = currSquare->getPiece();
-    Color currPieceColor = currPiece->getColor();
-
-    int x = currSquare->getX();
-    int y = currSquare->getY();
-
-    //qDebug() << "x: " << x << "y" << y;
-    //Right
-    for(int i = x + 1; i < BOARD_SIZE; ++i) {
-        Square* square = board.getSquare(y, i);
-
-        if(square == nullptr){
-            break;
-        }
-
-        qDebug() << "X: " << square->getX() << "Y: " << square->getY();
-
-        //qDebug() <<square->getX() << " "<< square->getY();
-        if(square->getPiece() == nullptr) {
-            validMoves.push_back(square);
-            //continue;
-        } else{
-            if (square->getPiece()->getColor() != currPieceColor) {
-                validMoves.push_back(square);
-            }
-            break;
-        }
-    }
-    return validMoves;
-}
-*/
-
 std::vector<Square*> Rook::getValidMoves(const Board& board) const
 {
     std::vector<Square*> validMoves;
@@ -77,8 +39,6 @@ std::vector<Square*> Rook::getValidMoves(const Board& board) const
         if (!square) {
             break;
         }
-
-        //qDebug() << "X: " << square->getX() << "Y: " << square->getY();
 
         if (square->getPiece() == nullptr) {
             //qDebug() << "Empty square at (" << square->getX() << ", " << square->getY() << ")";

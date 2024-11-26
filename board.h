@@ -16,7 +16,7 @@ public:
     ~Board();
 
     Square* getSquare(int row, int col) const;
-
+    bool isSquareOnBoard(Square* square) const;
 protected:
     void paintEvent(QPaintEvent *event) override;
 

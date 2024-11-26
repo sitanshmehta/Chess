@@ -39,13 +39,11 @@ void Board::setupBoard()
 {
     QGridLayout *grid = new QGridLayout(this);
     grid->setSpacing(0);
-    //grid->setMargin(0);
 
     for (int row = 0; row < BOARD_SIZE; ++row) {
         for(int col = 0; col < BOARD_SIZE; ++col) {
             squares[row][col] = new Square(col, row, this);
             grid->addWidget(squares[row][col], row, col);
-
 
             //connecting squares signal to board's slot
             connect(squares[row][col], &Square::squareClicked, this, &Board::handleSelectedSquare);
@@ -109,18 +107,36 @@ void Board::handleSelectedSquare(int x, int y)
         clickedSquare->setHighlighted(false);
     }
 
-    //qDebug() << "Piece";
-
     if(pieceOnSquare != nullptr) {
         std::vector<Square*> validMoves = pieceOnSquare->getValidMoves(this);
-        //qDebug() << "Here: ";
-        Square::highlightSetOfSquares(validMoves, true);
-        //for(Square* square : validMoves) {
-          //  square->setHighlighted(true);
+        //Square::highlightSetOfSquares(validMoves, true);
+
+        qDebug() << isSquareOnBoard(validMoves[0]);
+        //if(validMoves[0]) {
+          //  validMoves[0]->setHighlighted(true);
         //}
-        //validMoves[0]->setHighlighted(true);
+        qDebug() << "----------------------------";
+        qDebug() << "SIZE: " << validMoves.size();
+        qDebug() << validMoves[0]->getX();
+        qDebug() << validMoves[0]->getY();
+        qDebug() << validMoves[0]->getPiece();
+        qDebug() << validMoves[0]->getHighlighted();
+        qDebug() << "----------------------------";
     }
 }
+
+bool Board::isSquareOnBoard(Square* square) const
+{
+    for (int row = 0; row < BOARD_SIZE; ++row) {
+        for (int col = 0; col < BOARD_SIZE; ++col) {
+            if (squares[row][col] == square) {
+                return true;
+            }
+        }
+    }
+    return false;
+}
+
 
 void Board::paintEvent(QPaintEvent *event)
 {
