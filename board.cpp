@@ -111,17 +111,13 @@ void Board::handleSelectedSquare(int x, int y)
         std::vector<Square*> validMoves = pieceOnSquare->getValidMoves(this);
         //Square::highlightSetOfSquares(validMoves, true);
 
-        qDebug() << isSquareOnBoard(validMoves[0]);
-        //if(validMoves[0]) {
-          //  validMoves[0]->setHighlighted(true);
-        //}
-        qDebug() << "----------------------------";
+        //qDebug() << isSquareOnBoard(validMoves[0]);
         qDebug() << "SIZE: " << validMoves.size();
-        qDebug() << validMoves[0]->getX();
-        qDebug() << validMoves[0]->getY();
-        qDebug() << validMoves[0]->getPiece();
-        qDebug() << validMoves[0]->getHighlighted();
-        qDebug() << "----------------------------";
+
+        for(int i = 0; i < validMoves.size(); i++) {
+            qDebug() << "i in select" << i;
+            this->squares[validMoves[i]->getY()][validMoves[i]->getX()]->setHighlighted(true);
+        }
     }
 }
 
