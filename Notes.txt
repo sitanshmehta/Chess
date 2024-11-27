@@ -1,0 +1,9 @@
+-- Find a way to organise this later.
+
+Nov 26th
+    -Observation:
+        -The application crashes when the line qDebug() << "i in select" << i; is commented out (118, board.cpp).
+        -When the qDebug() statement is included, the application runs without crashing.
+    -Possible causes
+        -validMoves may have invalid pointers (which is a weird possibility since I have printed their attributes and also checked if they are null, maybe there are other ways to be invalid?)
+        -Adding qDebug may prevent the crash by altering the programs memory usage / execution timing. i should look into other examples online
