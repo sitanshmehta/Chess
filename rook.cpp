@@ -33,8 +33,9 @@ std::vector<Square*> Rook::getValidMoves(const Board& board) const
 
     Piece::Color currPieceColor = this->getColor();
 
-    // Right
+    //Right
     for (int i = x + 1; i < BOARD_SIZE; ++i) {
+        //qDebug() << "i in valid: " << i;
         Square* square = board.getSquare(y, i);
         if (!square) {
             break;
@@ -50,5 +51,50 @@ std::vector<Square*> Rook::getValidMoves(const Board& board) const
             break; // Stop searching in this direction after encountering a piece
         }
     }
+
+    /*
+    //Left
+    for(int i = x - 1; i >= 0; i--){
+        qDebug() << "Here";
+        if(i < 0) {
+            qDebug() << "less than -1";
+            break;
+        }
+
+        Square* square = board.getSquare(y, i);
+        if (!square) {
+            break;
+        }
+
+        qDebug() << "i:" << i;
+
+        if (square->getPiece() == nullptr) {
+            validMoves.push_back(square);
+        } else {
+            if (square->getPiece()->getColor() != currPieceColor) {
+                validMoves.push_back(square);
+            }
+            break; // Stop searching in this direction after encountering a piece
+        }
+    }
+    */
+    //down
+    /*for(int i = y + 1; i < BOARD_SIZE; ++i){
+        Square* square = board.getSquare(i, x);
+        if (!square) {
+            break;
+        }
+
+        if (square->getPiece() == nullptr) {
+            //qDebug() << "Empty square at (" << square->getX() << ", " << square->getY() << ")";
+            validMoves.push_back(square);
+        } else {
+            if (square->getPiece()->getColor() != currPieceColor) {
+                validMoves.push_back(square);
+            }
+            break; // Stop searching in this direction after encountering a piece
+        }
+    } */
+
     return validMoves;
 }
