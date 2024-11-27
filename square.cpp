@@ -15,7 +15,7 @@ Square::Square(int x, int y, QWidget *parent)
 
 Square::~Square()
 {
-    delete Square;
+    //delete this;
 }
 
 int Square::getX() const
@@ -46,7 +46,7 @@ void Square::setPiece(Piece *newPiece)
 
 void Square::setHighlighted(bool highlight)
 {
-    this->isHighLighted = highlight;
+    isHighLighted = highlight;
     update();
 }
 
