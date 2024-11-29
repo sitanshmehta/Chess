@@ -5,6 +5,7 @@
 #include <QWidget>
 #include "square.h"
 #include <QGridLayout>
+#include <QQueue>
 
 static const int BOARD_SIZE = 8;
 
@@ -22,7 +23,8 @@ protected:
 
 private:
     Square* squares[BOARD_SIZE][BOARD_SIZE];
-    Piece* selectedPiece = nullptr;
+    QQueue <Piece*> selectedPieces;
+
     void setupBoard();
     void handleSelectedSquare(int x, int y);
 };

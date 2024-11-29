@@ -3,7 +3,9 @@
 #include "board.h"
 
 Piece::Piece(Color color)
-    : color(color), currSquare(nullptr)
+    : color(color),
+      currSquare(nullptr),
+      selected(false)
 {}
 
 Piece::~Piece() {}

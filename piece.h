@@ -33,6 +33,7 @@ public:
 protected:
     Square* currSquare;
     Color color;
+    bool selected;
 };
 
 #endif // PIECE_H
