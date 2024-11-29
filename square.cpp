@@ -52,24 +52,15 @@ void Square::setHighlighted(bool highlight)
 
 void Square::highlightSetOfSquares(const std::vector<Square*>& squares, bool highlight)
 {
-    qDebug() << "SIZE: " << squares.size();
 
     if (!squares.empty() && squares[0] != nullptr) {
-        qDebug() << "Highlight: " << squares[0]->getHighlighted();
-        qDebug() << "Here";
-
         // Ensure squares[0] is valid
         squares[0]->setHighlighted(highlight);
-    } else {
-        qDebug() << "squares[0] is a null pointer or squares is empty.";
     }
 
-    // Highlight all squares
     for (Square* square : squares) {
         if (square != nullptr) {
             square->setHighlighted(highlight);
-        } else {
-            qDebug() << "Encountered a null pointer in squares vector.";
         }
     }
 }
