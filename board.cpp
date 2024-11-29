@@ -32,7 +32,7 @@ Board::~Board()
 }
 
 Square* Board::getSquare(int row, int col) const {
-    if(row >=0 && row < 8 && col >=0 && col < 8) {
+    if(row >=0 && row < BOARD_SIZE && col >=0 && col < BOARD_SIZE) {
         return this->squares[row][col];
     }
     return nullptr;
