@@ -97,9 +97,9 @@ void Board::setupBoard()
 
 void Board::handleSelectedSquare(int x, int y)
 {
-    //why does this work when we pass in y,x but not when we pass in x,y
     Square* clickedSquare = getSquare(y, x);
     Piece* pieceOnSquare = clickedSquare->getPiece();
+    bool addHighlight = true;
 
     bool isHighlighted = clickedSquare->getHighlighted();
 
@@ -108,19 +108,12 @@ void Board::handleSelectedSquare(int x, int y)
     }
     else {
         clickedSquare->setHighlighted(false);
+        addHighlight = false;
     }
 
     if(pieceOnSquare != nullptr) {
-        std::vector<Square*> validMoves = pieceOnSquare->getValidMoves(this);
-        //Square::highlightSetOfSquares(validMoves, true);
-
-        //qDebug() << isSquareOnBoard(validMoves[0]);
-        qDebug() << "SIZE: " << validMoves.size();
-
-        for(int i = 0; i < validMoves.size(); i++) {
-            qDebug() << "i in select" << i;
-            this->squares[validMoves[i]->getY()][validMoves[i]->getX()]->setHighlighted(true);
-        }
+        std::vector<Square*> validMoves = pieceOnSquare->getValidMoves(*this);
+        Square::highlightSetOfSquares(validMoves, addHighlight);
     }
 }
 
