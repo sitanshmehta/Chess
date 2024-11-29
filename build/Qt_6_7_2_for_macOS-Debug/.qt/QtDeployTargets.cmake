@@ -1,2 +1,0 @@
-set(__QT_DEPLOY_TARGET_chess_cpp_qt_FILE /Users/sitanshmehta/chess_cpp_qt/build/Qt_6_7_2_for_macOS-Debug/chess_cpp_qt.app/Contents/MacOS/chess_cpp_qt)
-set(__QT_DEPLOY_TARGET_chess_cpp_qt_TYPE EXECUTABLE)
