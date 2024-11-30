@@ -15,8 +15,6 @@ public:
     //overriden virtual functions
     QPixmap getPixmap() const override;
     std::vector<Square*> getValidMoves(const Board& board) const override;
-    //bool moveToSquare(Piece *piece, Square *square) override;
-
 
 private:
     QPixmap icon;
