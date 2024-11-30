@@ -2,6 +2,7 @@
 #define SQUARE_H
 
 #include <QWidget>
+#include <QTimer>
 #include "piece.h"
 
 class Piece;
@@ -23,22 +24,23 @@ public:
 
     void setPiece(Piece* newPiece);
     void setHighlighted(bool highlight);
-    //pbr to avoid copying, declared as static since it isnt instance specific
     static void highlightSetOfSquares(const std::vector<Square*> &squares, bool highlight);
 
 signals:
     void squareClicked(int x, int y);
+    void squareHeld(int x, int y);
 
-//override default behavior of paintEvent function that paints widgets
 protected:
     void paintEvent(QPaintEvent *event) override;
     void mousePressEvent(QMouseEvent *event) override;
+    void mouseReleaseEvent(QMouseEvent *event) override;
 
 private:
     int x;
     int y;
     Piece *piece;
     bool isHighLighted = false;
+    QTimer* pressAndHoldTimer;
 };
 
 #endif // SQUARE_H

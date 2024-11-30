@@ -17,16 +17,18 @@ public:
     ~Board();
 
     Square* getSquare(int row, int col) const;
+    void setSelectedPiece(Piece* piece);
     bool isSquareOnBoard(Square* square) const;
 protected:
     void paintEvent(QPaintEvent *event) override;
 
 private:
     Square* squares[BOARD_SIZE][BOARD_SIZE];
-    QQueue <Piece*> selectedPieces;
+    Piece* selectedPiece = nullptr;
 
     void setupBoard();
-    void handleSelectedSquare(int x, int y);
+    void handleSquarePressAndHold(int x, int y);
+    void handleSquareClicked(int x, int y);
 };
 
 #endif // BOARD_H

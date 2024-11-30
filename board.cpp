@@ -9,7 +9,7 @@ const std::string initialSetup[BOARD_SIZE][BOARD_SIZE] = {
     { "bR", "bN", "bB", "bQ", "bK", "bB", "bN", "bR" },
     { "bP", "bP", "bP", "bP", "bP", "bP", "bP", "bP" },
     { "",   "",   "",   "",   "",   "",   "",   ""   },
-    { "",   "",   "",   "bR",   "",   "",   "",   ""   },
+    { "",   "",   "",   "bR",   "",   "wR",   "",   ""   },
     { "",   "",   "",   "",   "",   "",   "",   ""   },
     { "",   "",   "",   "",   "",   "",   "",   ""   },
     { "wP", "wP", "wP", "wP", "wP", "wP", "wP", "wP" },
@@ -31,6 +31,13 @@ Board::~Board()
     }
 }
 
+void Board::setSelectedPiece(Piece* piece)
+{
+    if(piece != nullptr){
+        this->selectedPiece = piece;
+    }
+}
+
 Square* Board::getSquare(int row, int col) const {
     if(row >=0 && row < BOARD_SIZE && col >=0 && col < BOARD_SIZE) {
         return this->squares[row][col];
@@ -49,8 +56,8 @@ void Board::setupBoard()
             grid->addWidget(squares[row][col], row, col);
 
             //connecting squares signal to board's slot
-            connect(squares[row][col], &Square::squareClicked, this, &Board::handleSelectedSquare);
-
+            connect(squares[row][col], &Square::squareClicked, this, &Board::handleSquareClicked);
+            connect(squares[row][col], &Square::squareHeld, this, &Board::handleSquarePressAndHold);
             std::string pieceCode = initialSetup[row][col];
             //If it isnt an empty square
             if(!pieceCode.empty()){
@@ -95,7 +102,7 @@ void Board::setupBoard()
 }
 
 
-void Board::handleSelectedSquare(int x, int y)
+void Board::handleSquarePressAndHold(int x, int y)
 {
     Square* clickedSquare = getSquare(y, x);
     Piece* pieceOnSquare = clickedSquare->getPiece();
@@ -109,20 +116,18 @@ void Board::handleSelectedSquare(int x, int y)
     else {
         clickedSquare->setHighlighted(false);
         addHighlight = false;
-        if(pieceOnSquare != nullptr) {
-           // pieceOnSquare->setSelected(false);
-        }
     }
 
     if(pieceOnSquare != nullptr) {
-        if(pieceOnSquare->getSelected() == false){
-            //pieceOnSquare->setSelected(true);
-        }
+        this->selectedPiece = pieceOnSquare;
         std::vector<Square*> validMoves = pieceOnSquare->getValidMoves(*this);
         Square::highlightSetOfSquares(validMoves, addHighlight);
     }
+}
 
-    qDebug() << "Piece is selected 2: " << pieceOnSquare->getSelected();
+void Board::handleSquareClicked(int x, int y)
+{
+    qDebug() << "clicked";
 }
 
 bool Board::isSquareOnBoard(Square* square) const

@@ -1,14 +1,21 @@
 #include "square.h"
 #include <QPainter>
 #include <QMouseEvent>
+#include <QTimer>
 #include <iostream>
 
 Square::Square(int x, int y, QWidget *parent)
     : QWidget(parent),
       x(x),
       y(y),
-      piece(nullptr)
+      piece(nullptr),
+      pressAndHoldTimer(new QTimer(this))
 {
+    pressAndHoldTimer->setSingleShot(true);
+    connect(pressAndHoldTimer, &QTimer::timeout, this, [this]() {
+        emit squareHeld(this->x, this->y);
+    });
+
     setFixedSize(50, 50);
     setMouseTracking(true);
 }
@@ -86,9 +93,17 @@ void Square::paintEvent(QPaintEvent *event)
     }
 }
 
-void Square::mousePressEvent(QMouseEvent *event)
-{
-    if(event->button() == Qt::LeftButton) {
-        emit squareClicked(x, y);
+void Square::mousePressEvent(QMouseEvent* event) {
+    if (event->button() == Qt::LeftButton) {
+        pressAndHoldTimer->start(500);
+    }
+}
+
+void Square::mouseReleaseEvent(QMouseEvent* event) {
+    if (event->button() == Qt::LeftButton) {
+        if (pressAndHoldTimer->isActive()) {
+            pressAndHoldTimer->stop();
+            emit squareClicked(x, y);
+        }
     }
 }
