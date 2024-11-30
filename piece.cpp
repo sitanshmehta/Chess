@@ -24,3 +24,13 @@ Square* Piece::getCurrSquare() const
 {
     return currSquare;
 }
+
+void Piece::setSelected(bool selected)
+{
+    this->selected = selected;
+}
+
+bool Piece::getSelected() const
+{
+    return this->selected;
+}

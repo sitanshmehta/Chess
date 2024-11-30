@@ -21,8 +21,10 @@ public:
     virtual ~Piece();
 
     Color getColor() const;
-    void setCurrSquare(Square* square);
     Square* getCurrSquare() const;
+    bool getSelected() const;
+    void setCurrSquare(Square* square);
+    void setSelected(bool selected);
 
     virtual QPixmap getPixmap() const = 0;
     //Passing 'Board' to 'getValidMoves' is necessary for the piece to calculate valid moves

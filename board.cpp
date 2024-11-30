@@ -109,12 +109,20 @@ void Board::handleSelectedSquare(int x, int y)
     else {
         clickedSquare->setHighlighted(false);
         addHighlight = false;
+        if(pieceOnSquare != nullptr) {
+           // pieceOnSquare->setSelected(false);
+        }
     }
 
     if(pieceOnSquare != nullptr) {
+        if(pieceOnSquare->getSelected() == false){
+            //pieceOnSquare->setSelected(true);
+        }
         std::vector<Square*> validMoves = pieceOnSquare->getValidMoves(*this);
         Square::highlightSetOfSquares(validMoves, addHighlight);
     }
+
+    qDebug() << "Piece is selected 2: " << pieceOnSquare->getSelected();
 }
 
 bool Board::isSquareOnBoard(Square* square) const
