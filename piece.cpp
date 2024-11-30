@@ -4,8 +4,7 @@
 
 Piece::Piece(Color color)
     : color(color),
-      currSquare(nullptr),
-      selected(false)
+      currSquare(nullptr)
 {}
 
 Piece::~Piece() {}
@@ -25,12 +24,14 @@ Square* Piece::getCurrSquare() const
     return currSquare;
 }
 
-void Piece::setSelected(bool selected)
+bool Piece::moveToSquare(Square *square)
 {
-    this->selected = selected;
-}
-
-bool Piece::getSelected() const
-{
-    return this->selected;
+    if(square){
+        Square* currSquare = this->getCurrSquare();
+        square->setPiece(*this);
+        currSquare->setPiece(nullptr);
+        this->setCurrSquare(square);
+        return true;
+    }
+    return false;
 }

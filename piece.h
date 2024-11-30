@@ -22,20 +22,17 @@ public:
 
     Color getColor() const;
     Square* getCurrSquare() const;
-    bool getSelected() const;
     void setCurrSquare(Square* square);
-    void setSelected(bool selected);
+    bool moveToSquare(Square *square);
 
     virtual QPixmap getPixmap() const = 0;
     //Passing 'Board' to 'getValidMoves' is necessary for the piece to calculate valid moves
     //based on the current board state, including obstacles and other pieces.
     virtual std::vector<Square*> getValidMoves(const Board& board) const = 0;
-    //virtual bool moveToSquare(Piece *piece, Square *square) = 0;
 
 protected:
     Square* currSquare;
     Color color;
-    bool selected;
 };
 
 #endif // PIECE_H
