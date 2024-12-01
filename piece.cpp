@@ -28,7 +28,7 @@ bool Piece::moveToSquare(Square *square)
 {
     if(square){
         Square* currSquare = this->getCurrSquare();
-        square->setPiece(*this);
+        square->setPiece(this);
         currSquare->setPiece(nullptr);
         this->setCurrSquare(square);
         return true;

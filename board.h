@@ -29,6 +29,7 @@ private:
     void setupBoard();
     void handleSquarePressAndHold(int x, int y);
     void handleSquareClicked(int x, int y);
+    bool isSquareInValidMoves(std::vector<Square*> validMoves, Square *square);
 };
 
 #endif // BOARD_H

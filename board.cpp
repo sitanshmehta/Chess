@@ -119,7 +119,6 @@ void Board::handleSquarePressAndHold(int x, int y)
     }
 
     if(pieceOnSquare != nullptr) {
-        this->selectedPiece = pieceOnSquare;
         std::vector<Square*> validMoves = pieceOnSquare->getValidMoves(*this);
         Square::highlightSetOfSquares(validMoves, addHighlight);
     }
@@ -127,7 +126,21 @@ void Board::handleSquarePressAndHold(int x, int y)
 
 void Board::handleSquareClicked(int x, int y)
 {
-    qDebug() << "clicked";
+    Square* clickedSquare = getSquare(y, x);
+    Piece* pieceOnSquare = clickedSquare->getPiece();
+
+    if(this->selectedPiece != nullptr && isSquareOnBoard(clickedSquare)){
+        std::vector<Square*> validMoves = this->selectedPiece->getValidMoves(*this);
+        if(isSquareInValidMoves(validMoves, clickedSquare))
+        {
+            this->selectedPiece->moveToSquare(clickedSquare);
+        }
+        this->selectedPiece = nullptr;
+    }
+
+    if(pieceOnSquare != nullptr && this->selectedPiece == nullptr){
+        this->selectedPiece = pieceOnSquare;
+    }
 }
 
 bool Board::isSquareOnBoard(Square* square) const
@@ -146,4 +159,9 @@ bool Board::isSquareOnBoard(Square* square) const
 void Board::paintEvent(QPaintEvent *event)
 {
     QWidget::paintEvent(event);
+}
+
+bool Board::isSquareInValidMoves(std::vector<Square*> validMoves, Square *square)
+{
+    return std::find(validMoves.begin(), validMoves.end(), square) != validMoves.end();
 }
