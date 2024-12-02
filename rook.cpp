@@ -1,6 +1,6 @@
 #include "rook.h"
 #include "piece.h"
-#include"board.h"
+#include "board.h"
 #include "square.h"
 #include "iostream"
 #include "utility"
