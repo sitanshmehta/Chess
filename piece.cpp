@@ -24,6 +24,16 @@ Square* Piece::getCurrSquare() const
     return currSquare;
 }
 
+void Piece::setHasBeenMoved(bool moved)
+{
+    this->hasBeenMoved = moved;
+}
+
+bool Piece::getHasBeenMoved() const
+{
+    return this->hasBeenMoved;
+}
+
 bool Piece::moveToSquare(Square *square)
 {
     if(square){
@@ -31,6 +41,7 @@ bool Piece::moveToSquare(Square *square)
         square->setPiece(this);
         currSquare->setPiece(nullptr);
         this->setCurrSquare(square);
+        this->setHasBeenMoved(true);
         return true;
     }
     return false;

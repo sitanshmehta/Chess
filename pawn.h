@@ -1,5 +1,5 @@
-#ifndef ROOK_H
-#define ROOK_H
+#ifndef PAWN_H
+#define PAWN_H
 
 #include <QPixmap>
 #include "piece.h"
@@ -7,10 +7,10 @@
 
 class Square;
 
-class Rook : public Piece
+class Pawn : public Piece
 {
 public:
-    Rook(Color color);
+    Pawn(Color color);
 
     QPixmap getPixmap() const override;
     std::vector<Square*> getValidMoves(const Board& board) const override;
@@ -19,4 +19,4 @@ private:
     QPixmap icon;
 };
 
-#endif // ROOK_H
+#endif // PAWN_H

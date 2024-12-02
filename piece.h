@@ -23,6 +23,8 @@ public:
     Color getColor() const;
     Square* getCurrSquare() const;
     void setCurrSquare(Square* square);
+    void setHasBeenMoved(bool moved);
+    bool getHasBeenMoved() const;
     bool moveToSquare(Square *square);
 
     virtual QPixmap getPixmap() const = 0;
@@ -33,6 +35,7 @@ public:
 protected:
     Square* currSquare;
     Color color;
+    bool hasBeenMoved = false;
 };
 
 #endif // PIECE_H
