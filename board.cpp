@@ -1,6 +1,7 @@
 #include "board.h"
 #include "square.h"
 #include "rook.h"
+#include "knight.h"
 #include <QGridLayout>
 #include "iostream"
 #include <QDebug>
@@ -9,8 +10,8 @@ const std::string initialSetup[BOARD_SIZE][BOARD_SIZE] = {
     { "bR", "bN", "bB", "bQ", "bK", "bB", "bN", "bR" },
     { "bP", "bP", "bP", "bP", "bP", "bP", "bP", "bP" },
     { "",   "",   "",   "",   "",   "",   "",   ""   },
-    { "",   "",   "",   "bR",   "",   "wR",   "",   ""   },
     { "",   "",   "",   "",   "",   "",   "",   ""   },
+    { "",   "",   "",   "wN",   "",   "",   "",   ""   },
     { "",   "",   "",   "",   "",   "",   "",   ""   },
     { "wP", "wP", "wP", "wP", "wP", "wP", "wP", "wP" },
     { "wR", "wN", "wB", "wQ", "wK", "wB", "wN", "wR" }
@@ -71,7 +72,7 @@ void Board::setupBoard()
                         piece = new Rook(pieceColor);
                         break;
                     case 'N':
-                        // piece = new Knight(pieceColor);
+                        piece = new Knight(pieceColor);
                         break;
                     case 'B':
                         // piece = new Bishop(pieceColor);

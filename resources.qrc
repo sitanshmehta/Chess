@@ -2,5 +2,7 @@
     <qresource prefix="/images">
         <file>images/rook_white.png</file>
         <file>images/rook_black.png</file>
+        <file>images/knight_black.png</file>
+        <file>images/knight_white.png</file>
     </qresource>
 </RCC>
