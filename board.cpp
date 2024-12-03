@@ -1,11 +1,14 @@
+#include <QGridLayout>
+#include "iostream"
+#include <QDebug>
+
 #include "board.h"
 #include "square.h"
 #include "rook.h"
 #include "knight.h"
 #include "pawn.h"
-#include <QGridLayout>
-#include "iostream"
-#include <QDebug>
+#include "bishop.h"
+#include "queen.h"
 
 const std::string initialSetup[BOARD_SIZE][BOARD_SIZE] = {
     { "bR", "bN", "bB", "bQ", "bK", "bB", "bN", "bR" },
@@ -76,10 +79,10 @@ void Board::setupBoard()
                         piece = new Knight(pieceColor);
                         break;
                     case 'B':
-                        // piece = new Bishop(pieceColor);
+                        piece = new Bishop(pieceColor);
                         break;
                     case 'Q':
-                        // piece = new Queen(pieceColor);
+                        piece = new Queen(pieceColor);
                         break;
                     case 'K':
                         // piece = new King(pieceColor);
