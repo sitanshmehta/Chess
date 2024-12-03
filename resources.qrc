@@ -6,5 +6,9 @@
         <file>images/knight_white.png</file>
         <file>images/pawn_white.png</file>
         <file>images/pawn_black.png</file>
+        <file>images/bishop_black.png</file>
+        <file>images/bishop_white.png</file>
+        <file>images/queen_white.png</file>
+        <file>images/queen_black.png</file>
     </qresource>
 </RCC>
